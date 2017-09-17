@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		75F0CE621F6E9A4F00765251 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75F0CE611F6E9A4F00765251 /* main.cpp */; };
+		75F0CE6A1F6E9A6E00765251 /* RK4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75F0CE681F6E9A6E00765251 /* RK4.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		75F0CE5E1F6E9A4F00765251 /* RK4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RK4; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F0CE611F6E9A4F00765251 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		75F0CE681F6E9A6E00765251 /* RK4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RK4.cpp; sourceTree = "<group>"; };
+		75F0CE691F6E9A6E00765251 /* RK4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RK4.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,8 @@
 		75F0CE601F6E9A4F00765251 /* RK4 */ = {
 			isa = PBXGroup;
 			children = (
+				75F0CE681F6E9A6E00765251 /* RK4.cpp */,
+				75F0CE691F6E9A6E00765251 /* RK4.h */,
 				75F0CE611F6E9A4F00765251 /* main.cpp */,
 			);
 			path = RK4;
@@ -120,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75F0CE621F6E9A4F00765251 /* main.cpp in Sources */,
+				75F0CE6A1F6E9A6E00765251 /* RK4.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
