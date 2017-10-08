@@ -24,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		75411FC71F890DBF00D7FCE8 /* ODESolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ODESolver.h; sourceTree = "<group>"; };
 		75F0CE5E1F6E9A4F00765251 /* RK4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RK4; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F0CE611F6E9A4F00765251 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		75F0CE681F6E9A6E00765251 /* RK4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RK4.cpp; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 			children = (
 				75F0CE681F6E9A6E00765251 /* RK4.cpp */,
 				75F0CE691F6E9A6E00765251 /* RK4.h */,
+				75411FC71F890DBF00D7FCE8 /* ODESolver.h */,
 				75F0CE611F6E9A4F00765251 /* main.cpp */,
 			);
 			path = RK4;
@@ -93,7 +95,7 @@
 		75F0CE561F6E9A4F00765251 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Vaughan Thomas";
 				TargetAttributes = {
 					75F0CE5D1F6E9A4F00765251 = {
@@ -254,6 +256,7 @@
 				75F0CE671F6E9A4F00765251 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
