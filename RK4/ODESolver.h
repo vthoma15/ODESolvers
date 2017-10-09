@@ -17,7 +17,7 @@ class FuncEval
 {
   public:
     FuncEval(unsigned nVariables) : m_nVariables(nVariables) {}
-    unsigned nVars() { return m_nVariables; }
+    unsigned nVars() const { return m_nVariables; }
     virtual void eval(float t, const valarray<float>& y, valarray<float>& dydt) = 0;
   
   protected:
@@ -31,6 +31,9 @@ class ODESolver
   : m_nVars(fEval.nVars()), m_time(t0), m_y(Y0), m_dydt(fEval) { }
     virtual void step() = 0;
     virtual void stepTo() = 0;
+  
+  float getTime() { return m_time; }
+  valarray<float> getSolution() {return m_y; }
   
   protected:
     unsigned m_nVars;
