@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		758B47CD1F8ACFD50002B308 /* DataLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 758B47CB1F8ACFD50002B308 /* DataLogger.cpp */; };
+		758B47D01F8C3E0B0002B308 /* Oscillators.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 758B47CE1F8C3E0B0002B308 /* Oscillators.cpp */; };
 		75F0CE621F6E9A4F00765251 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75F0CE611F6E9A4F00765251 /* main.cpp */; };
-		75F0CE6A1F6E9A6E00765251 /* RK4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75F0CE681F6E9A6E00765251 /* RK4.cpp */; };
+		75F0CE6A1F6E9A6E00765251 /* ODESolvers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75F0CE681F6E9A6E00765251 /* ODESolvers.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,13 +26,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		75411FC71F890DBF00D7FCE8 /* ODESolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ODESolver.h; sourceTree = "<group>"; };
+		75411FC71F890DBF00D7FCE8 /* ODESolvers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ODESolvers.h; sourceTree = "<group>"; };
 		758B47CB1F8ACFD50002B308 /* DataLogger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DataLogger.cpp; sourceTree = "<group>"; };
 		758B47CC1F8ACFD50002B308 /* DataLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataLogger.h; sourceTree = "<group>"; };
+		758B47CE1F8C3E0B0002B308 /* Oscillators.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Oscillators.cpp; sourceTree = "<group>"; };
+		758B47CF1F8C3E0B0002B308 /* Oscillators.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Oscillators.h; sourceTree = "<group>"; };
 		75F0CE5E1F6E9A4F00765251 /* RK4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RK4; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F0CE611F6E9A4F00765251 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		75F0CE681F6E9A6E00765251 /* RK4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RK4.cpp; sourceTree = "<group>"; };
-		75F0CE691F6E9A6E00765251 /* RK4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RK4.h; sourceTree = "<group>"; };
+		75F0CE681F6E9A6E00765251 /* ODESolvers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ODESolvers.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,12 +66,13 @@
 		75F0CE601F6E9A4F00765251 /* RK4 */ = {
 			isa = PBXGroup;
 			children = (
-				75F0CE681F6E9A6E00765251 /* RK4.cpp */,
-				75F0CE691F6E9A6E00765251 /* RK4.h */,
-				75411FC71F890DBF00D7FCE8 /* ODESolver.h */,
+				75F0CE681F6E9A6E00765251 /* ODESolvers.cpp */,
+				75411FC71F890DBF00D7FCE8 /* ODESolvers.h */,
 				758B47CB1F8ACFD50002B308 /* DataLogger.cpp */,
 				758B47CC1F8ACFD50002B308 /* DataLogger.h */,
 				75F0CE611F6E9A4F00765251 /* main.cpp */,
+				758B47CE1F8C3E0B0002B308 /* Oscillators.cpp */,
+				758B47CF1F8C3E0B0002B308 /* Oscillators.h */,
 			);
 			path = RK4;
 			sourceTree = "<group>";
@@ -133,7 +136,8 @@
 			files = (
 				758B47CD1F8ACFD50002B308 /* DataLogger.cpp in Sources */,
 				75F0CE621F6E9A4F00765251 /* main.cpp in Sources */,
-				75F0CE6A1F6E9A6E00765251 /* RK4.cpp in Sources */,
+				75F0CE6A1F6E9A6E00765251 /* ODESolvers.cpp in Sources */,
+				758B47D01F8C3E0B0002B308 /* Oscillators.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

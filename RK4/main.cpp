@@ -9,7 +9,7 @@
 #include<iostream>
 #include<valarray>
 
-#include "RK4.h"
+#include "ODESolvers.h"
 
 using std::cout;
 using std::endl;

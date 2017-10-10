@@ -15,7 +15,7 @@
 #include <valarray>
 #include <string>
 
-#include "ODESolver.h"
+#include "ODESolvers.h"
 
 using std::string;
 using std::vector;
