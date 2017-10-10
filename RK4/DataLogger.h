@@ -27,13 +27,13 @@ class DataLogger
 public:
   DataLogger(const FuncEval& fEval);
   
-  void addData(float t, const valarray<float>& y);
+  void addData(double t, const valarray<double>& y);
   void saveDataToFile(string filename) const;
   
 private:
   unsigned m_nVars;
-  vector<float> m_time;
-  vector<valarray<float> > m_data;
+  vector<double> m_time;
+  vector<valarray<double> > m_data;
   
 };
 

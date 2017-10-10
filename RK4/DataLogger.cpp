@@ -10,11 +10,11 @@
 
 DataLogger::DataLogger(const FuncEval& fEval) : m_nVars(fEval.nVars() )
 {
-  m_time = vector<float>();
-  m_data = vector<valarray<float> >();
+  m_time = vector<double>();
+  m_data = vector<valarray<double> >();
 }
 
-void DataLogger::addData(float t, const valarray<float>& y)
+void DataLogger::addData(double t, const valarray<double>& y)
 {
   m_time.push_back(t);
   m_data.push_back(y);
@@ -29,7 +29,7 @@ void DataLogger::saveDataToFile(string filename) const
   
   for(unsigned i = 0; i < m_time.size(); ++i) {
     outfile << m_time[i];
-    valarray<float> vec = m_data[i];
+    valarray<double> vec = m_data[i];
     for(unsigned j = 0; j < m_nVars; ++j) {
       outfile << c << vec[j];
     }

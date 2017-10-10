@@ -3,15 +3,15 @@
 
 
 
-RK4Solver::RK4Solver(FuncEval& fEval, float t0, float dt, const valarray<float>& Y0)
+RK4Solver::RK4Solver(FuncEval& fEval, double t0, double dt, const valarray<double>& Y0)
 : ODESolver(fEval, t0, Y0), m_dt(dt)
 { }
 
 void RK4Solver::step()
 {
   double tplusHalf = m_time + m_dt/2;
-  valarray<float> k1(m_nVars),k2(m_nVars),k3(m_nVars),k4(m_nVars);
-  valarray<float> y2(m_nVars),y3(m_nVars),y4(m_nVars);
+  valarray<double> k1(m_nVars),k2(m_nVars),k3(m_nVars),k4(m_nVars);
+  valarray<double> y2(m_nVars),y3(m_nVars),y4(m_nVars);
   
   m_dydt.eval(m_time, m_y, k1);
   

@@ -7,11 +7,11 @@
 //
 
 #include "Oscillators.h"
-UndampedOscillator::UndampedOscillator(float mass, float springConstant)
+UndampedOscillator::UndampedOscillator(double mass, double springConstant)
 : FuncEval(2), m_k(springConstant), m_mass(mass)
 { }
 
-void UndampedOscillator::eval(float t, const valarray<float>& y, valarray<float>& dydt)
+void UndampedOscillator::eval(double t, const valarray<double>& y, valarray<double>& dydt)
 {
   dydt[0] = y[1];
   dydt[1] = m_k * y[0] / m_mass;
@@ -19,11 +19,11 @@ void UndampedOscillator::eval(float t, const valarray<float>& y, valarray<float>
   return;
 }
 
-DampedOscillator::DampedOscillator(float mass, float springConstant, float dampingCoefficient)
+DampedOscillator::DampedOscillator(double mass, double springConstant, double dampingCoefficient)
 : FuncEval(2), m_k(springConstant), m_mass(mass), m_dampingCoefficient(dampingCoefficient)
 { }
 
-void DampedOscillator::eval(float t, const valarray<float>& y, valarray<float>& dydt)
+void DampedOscillator::eval(double t, const valarray<double>& y, valarray<double>& dydt)
 {
   dydt[0] = y[1];
   dydt[1] = -(m_k * y[0] + m_dampingCoefficient * y[1])/ m_mass;

@@ -14,21 +14,21 @@
 class UndampedOscillator : public FuncEval
 {
 public:
-  UndampedOscillator(float mass, float springConstant);
-  void eval(float t, const valarray<float>& y, valarray<float>& dydt);
+  UndampedOscillator(double mass, double springConstant);
+  void eval(double t, const valarray<double>& y, valarray<double>& dydt);
 private:
-  float m_k;      // Restoring constant
-  float m_mass;   // Mass
+  double m_k;      // Restoring constant
+  double m_mass;   // Mass
 };
 
 class DampedOscillator : public FuncEval
 {
 public:
-  DampedOscillator(float mass, float springConstant, float dampingCoefficient);
-  void eval(float t, const valarray<float>& y, valarray<float>& dydt);
+  DampedOscillator(double mass, double springConstant, double dampingCoefficient);
+  void eval(double t, const valarray<double>& y, valarray<double>& dydt);
 private:
-  float m_k;                     // Restoring constant
-  float m_mass;                  // Mass
-  float m_dampingCoefficient;    // Damping coefficient
+  double m_k;                     // Restoring constant
+  double m_mass;                  // Mass
+  double m_dampingCoefficient;    // Damping coefficient
 };
 #endif /* Oscillators_h */
