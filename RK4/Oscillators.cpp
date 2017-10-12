@@ -14,7 +14,7 @@ UndampedOscillator::UndampedOscillator(double mass, double springConstant)
 void UndampedOscillator::eval(double t, const valarray<double>& y, valarray<double>& dydt)
 {
   dydt[0] = y[1];
-  dydt[1] = m_k * y[0] / m_mass;
+  dydt[1] = -m_k * y[0] / m_mass;
   
   return;
 }
