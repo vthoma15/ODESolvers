@@ -9,9 +9,7 @@
 #ifndef ODESolvers_h
 #define ODESolvers_h
 
-#include<valarray>
-
-using std::valarray;
+#include "Utilities.h"
 
 class FuncEval
 {
@@ -30,7 +28,6 @@ class ODESolver
     ODESolver(FuncEval& fEval, double t0, const valarray<double>& Y0)
   : m_nVars(fEval.nVars()), m_time(t0), m_y(Y0), m_dydt(fEval) { }
     virtual void step() = 0;
-    virtual void stepTo(double tend) = 0;
   
   double getTime() { return m_time; }
   valarray<double> getSolution() {return m_y; }
@@ -50,7 +47,6 @@ public:
   
   // Inherited virtual functions from base class 'ODESolver'
   void step();
-  void stepTo(double tend);
   
 private:
   double m_dt;     // Time step for fixed time step solver
@@ -64,7 +60,6 @@ public:
   
   // Inherited virtual functions from base class 'ODESolver'
  void step();
- void stepTo(double tend);
   
 private:
   double m_dt;     // Time step for fixed time step solver

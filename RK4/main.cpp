@@ -33,8 +33,6 @@ int main(int argc, const char * argv[])
   // Integration loop
   do
   {
-    std::cout << "Time: " << integrator.getTime() << std::endl;
-
     integrator.step();
     datalog.addData(integrator.getTime(), integrator.getSolution() );
     
