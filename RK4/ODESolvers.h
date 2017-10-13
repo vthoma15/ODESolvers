@@ -10,6 +10,7 @@
 #define ODESolvers_h
 
 #include "Utilities.h"
+enum solverType {Euler, RK4};
 
 class FuncEval
 {
@@ -25,8 +26,8 @@ class FuncEval
 class ODESolver
 {
   public:
-    ODESolver(FuncEval& fEval, double t0, const valarray<double>& Y0)
-  : m_nVars(fEval.nVars()), m_time(t0), m_y(Y0), m_dydt(fEval) { }
+    ODESolver(FuncEval& fEval, double t0, double dt, const valarray<double>& Y0)
+  : m_nVars(fEval.nVars()), m_time(t0), m_dt(dt), m_y(Y0), m_dydt(fEval) { }
     virtual void step() = 0;
   
   double getTime() { return m_time; }
@@ -34,7 +35,7 @@ class ODESolver
   
   protected:
     unsigned m_nVars;
-    double m_time;
+    double m_time, m_dt;
     FuncEval& m_dydt;
     valarray<double> m_y;
 };
@@ -48,8 +49,6 @@ public:
   // Inherited virtual functions from base class 'ODESolver'
   void step();
   
-private:
-  double m_dt;     // Time step for fixed time step solver
 };
 
 class RK4Solver : public ODESolver
@@ -62,7 +61,7 @@ public:
  void step();
   
 private:
-  double m_dt;     // Time step for fixed time step solver
+
 };
 
 #endif /* ODESolvers_h */

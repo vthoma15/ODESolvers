@@ -1,7 +1,7 @@
 #include "ODESolvers.h"
 
 EulerSolver::EulerSolver(FuncEval& fEval, double t0, double dt, const valarray<double>& Y0)
-: ODESolver(fEval, t0, Y0), m_dt(dt)
+: ODESolver(fEval, t0, dt, Y0)
 { }
 
 void EulerSolver::step()
@@ -17,7 +17,7 @@ void EulerSolver::step()
 }
 
 RK4Solver::RK4Solver(FuncEval& fEval, double t0, double dt, const valarray<double>& Y0)
-: ODESolver(fEval, t0, Y0), m_dt(dt)
+: ODESolver(fEval, t0, dt, Y0)
 { }
 
 void RK4Solver::step()
