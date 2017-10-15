@@ -10,14 +10,14 @@
 #define ODESolvers_h
 
 #include "Utilities.h"
-enum solverType {Euler, RK4};
+#include "DataLogger.h"
 
-class FuncEval
+class ODE
 {
   public:
-    FuncEval(unsigned nVariables) : m_nVariables(nVariables) {}
+    ODE(unsigned nVariables) : m_nVariables(nVariables) {}
     unsigned nVars() const { return m_nVariables; }
-    virtual void eval(double t, const valarray<double>& y, valarray<double>& dydt) = 0;
+    virtual void dydt(double t, const valarray<double>& y, valarray<double>& dydt) = 0;
   
   protected:
     unsigned m_nVariables;
@@ -26,25 +26,33 @@ class FuncEval
 class ODESolver
 {
   public:
-    ODESolver(FuncEval& fEval, double t0, double dt, const valarray<double>& Y0)
-  : m_nVars(fEval.nVars()), m_time(t0), m_dt(dt), m_y(Y0), m_dydt(fEval) { }
-    virtual void step() = 0;
+    ODESolver(ODE& fEval, double t0, double dt, const valarray<double>& Y0)
+  : m_nVars(fEval.nVars()), m_time(t0), m_dt(dt), m_y(Y0), m_ODE(fEval), m_logger(fEval.nVars())
+  { m_logger.addData(m_time,m_y); }
   
+  // Integration Functions
+  virtual void step() = 0;
+  void stepTo(double tend);
+  
+  // Accessors
   double getTime() { return m_time; }
   valarray<double> getSolution() {return m_y; }
+  
+  void saveDataToFile(string filename) { m_logger.saveDataToFile(filename); }
   
   protected:
     unsigned m_nVars;
     double m_time, m_dt;
-    FuncEval& m_dydt;
     valarray<double> m_y;
+    ODE& m_ODE;
+    DataLogger m_logger;
 };
 
 class EulerSolver : public ODESolver
 {
 public:
   // Constructor
-  EulerSolver(FuncEval& fEval, double t0, double dt, const valarray<double>& Y0);
+  EulerSolver(ODE& fEval, double t0, double dt, const valarray<double>& Y0);
   
   // Inherited virtual functions from base class 'ODESolver'
   void step();
@@ -55,7 +63,7 @@ class RK4Solver : public ODESolver
 {
 public:
   // Constructor
-  RK4Solver(FuncEval& fEval, double t0, double dt, const valarray<double>& Y0);
+  RK4Solver(ODE& fEval, double t0, double dt, const valarray<double>& Y0);
   
   // Inherited virtual functions from base class 'ODESolver'
  void step();

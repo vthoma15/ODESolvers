@@ -11,21 +11,21 @@
 
 #include "ODESolvers.h"
 
-class UndampedOscillator : public FuncEval
+class UndampedOscillator : public ODE
 {
 public:
   UndampedOscillator(double mass, double springConstant);
-  void eval(double t, const valarray<double>& y, valarray<double>& dydt);
+  void dydt(double t, const valarray<double>& y, valarray<double>& dydt);
 private:
   double m_k;      // Restoring constant
   double m_mass;   // Mass
 };
 
-class DampedOscillator : public FuncEval
+class DampedOscillator : public ODE
 {
 public:
   DampedOscillator(double mass, double springConstant, double dampingCoefficient);
-  void eval(double t, const valarray<double>& y, valarray<double>& dydt);
+  void dydt(double t, const valarray<double>& y, valarray<double>& dydt);
 private:
   double m_k;                     // Restoring constant
   double m_mass;                  // Mass

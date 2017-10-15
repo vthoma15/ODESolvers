@@ -15,17 +15,17 @@
 #include <valarray>
 #include <string>
 
-#include "ODESolvers.h"
-
 using std::string;
 using std::vector;
 using std::valarray;
 using std::ofstream;
 
+// Forward Declaration of
+
 class DataLogger
 {
 public:
-  DataLogger(const FuncEval& fEval);
+  DataLogger(unsigned dimension);
   
   void addData(double t, const valarray<double>& y);
   void saveDataToFile(string filename) const;

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		75411FCA1F902E4400D7FCE8 /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75411FC91F902E4400D7FCE8 /* Utilities.cpp */; };
-		75411FCD1F9035C500D7FCE8 /* DynamicalSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75411FCB1F9035C500D7FCE8 /* DynamicalSystem.cpp */; };
 		758B47CD1F8ACFD50002B308 /* DataLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 758B47CB1F8ACFD50002B308 /* DataLogger.cpp */; };
 		758B47D01F8C3E0B0002B308 /* Oscillators.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 758B47CE1F8C3E0B0002B308 /* Oscillators.cpp */; };
 		75F0CE621F6E9A4F00765251 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75F0CE611F6E9A4F00765251 /* main.cpp */; };
@@ -31,8 +30,6 @@
 		75411FC71F890DBF00D7FCE8 /* ODESolvers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ODESolvers.h; sourceTree = "<group>"; };
 		75411FC81F902E4400D7FCE8 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		75411FC91F902E4400D7FCE8 /* Utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utilities.cpp; sourceTree = "<group>"; };
-		75411FCB1F9035C500D7FCE8 /* DynamicalSystem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DynamicalSystem.cpp; sourceTree = "<group>"; };
-		75411FCC1F9035C500D7FCE8 /* DynamicalSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicalSystem.h; sourceTree = "<group>"; };
 		758B47CB1F8ACFD50002B308 /* DataLogger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DataLogger.cpp; sourceTree = "<group>"; };
 		758B47CC1F8ACFD50002B308 /* DataLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataLogger.h; sourceTree = "<group>"; };
 		758B47CE1F8C3E0B0002B308 /* Oscillators.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Oscillators.cpp; sourceTree = "<group>"; };
@@ -79,8 +76,6 @@
 				758B47CB1F8ACFD50002B308 /* DataLogger.cpp */,
 				758B47CC1F8ACFD50002B308 /* DataLogger.h */,
 				75F0CE611F6E9A4F00765251 /* main.cpp */,
-				75411FCB1F9035C500D7FCE8 /* DynamicalSystem.cpp */,
-				75411FCC1F9035C500D7FCE8 /* DynamicalSystem.h */,
 				758B47CE1F8C3E0B0002B308 /* Oscillators.cpp */,
 				758B47CF1F8C3E0B0002B308 /* Oscillators.h */,
 			);
@@ -147,7 +142,6 @@
 				758B47CD1F8ACFD50002B308 /* DataLogger.cpp in Sources */,
 				75F0CE621F6E9A4F00765251 /* main.cpp in Sources */,
 				75F0CE6A1F6E9A6E00765251 /* ODESolvers.cpp in Sources */,
-				75411FCD1F9035C500D7FCE8 /* DynamicalSystem.cpp in Sources */,
 				758B47D01F8C3E0B0002B308 /* Oscillators.cpp in Sources */,
 				75411FCA1F902E4400D7FCE8 /* Utilities.cpp in Sources */,
 			);

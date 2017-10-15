@@ -6,6 +6,8 @@
 //  Copyright © 2017 Vaughan Thomas. All rights reserved.
 //
 
+#include <cmath>
+
 #include "ODESolvers.h"
 #include "Oscillators.h"
 #include "DataLogger.h"
@@ -13,36 +15,38 @@
 
 int main(int argc, const char * argv[])
 {
-  double tend  = 7.3;
+  const double pi = acos(-1.0);
+  double tend  = 2*pi;
   double mass = 30;
   double constant = 30;
   double dt = .01;
-  string filename("/Users/vaughan/Dropbox/SEG/Jakir/RK4/Results/UndampedOscillator.csv");
+  string EulerFilename("/Users/vaughan/Dropbox/SEG/Jakir/RK4/Results/UndampedOscillator_Euler.csv");
+  string RK4Filename("/Users/vaughan/Dropbox/SEG/Jakir/RK4/Results/UndampedOscillator_RK4.csv");
   valarray<double> Y(2);
   
   Y[0] = 1;
   Y[1] = 0;
   
   UndampedOscillator spring(constant,mass);
-  EulerSolver integrator(spring,0,dt,Y);
-  DataLogger datalog(spring);
-  
-  // Record initial conditions
-  datalog.addData(integrator.getTime(), integrator.getSolution() );
+  EulerSolver euler(spring,0,dt,Y);
+  RK4Solver rk4(spring,0,dt,Y);
+
   
   // Integration loop
-  do
-  {
-    integrator.step();
-    datalog.addData(integrator.getTime(), integrator.getSolution() );
-    
-  } while(integrator.getTime() < tend);
+  euler.stepTo(tend);
+  rk4.stepTo(tend);
   
-  Y = integrator.getSolution();
-  std::cout << "Tend: " << integrator.getTime() << std::endl;
-  std::cout << "[" << Y[0] << ',' << Y[1] << "]\n";
-  datalog.saveDataToFile(filename);
-  std::cout << "Data saved to file: " << filename << std::endl;
+  Y = euler.getSolution();
+  std::cout << "Euler Solution:\n\tTend: " << euler.getTime() << std::endl;
+  std::cout << "\t[" << Y[0] << ',' << Y[1] << "]\n";
+  euler.saveDataToFile(EulerFilename);
+  std::cout << "Data from Euler integration saved to file: " << EulerFilename << std::endl;
+  
+  Y = rk4.getSolution();
+  std::cout << "Euler Solution:\n\tTend: " << rk4.getTime() << std::endl;
+  std::cout << "\t[" << Y[0] << ',' << Y[1] << "]\n";
+  rk4.saveDataToFile(RK4Filename);
+  std::cout << "Data from Euler integration saved to file: " << RK4Filename << std::endl;
   
   return 0;
 }

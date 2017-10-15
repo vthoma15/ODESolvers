@@ -8,7 +8,7 @@
 
 #include "DataLogger.h"
 
-DataLogger::DataLogger(const FuncEval& fEval) : m_nVars(fEval.nVars() )
+DataLogger::DataLogger(unsigned dimension) : m_nVars(dimension )
 {
   m_time = vector<double>();
   m_data = vector<valarray<double> >();
