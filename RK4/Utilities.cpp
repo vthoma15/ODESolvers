@@ -1,8 +1,8 @@
 #include "Utilities.h"
 
-valarray<double> operator+(const valarray<double>& vec1,const valarray<double>& vec2)
+dVector operator+(const dVector& vec1,const dVector& vec2)
 {
-  valarray<double> result(vec1.size() );
+  dVector result(vec1.size() );
     
     for(unsigned i = 0; i < vec1.size(); ++i)
       result[i] = vec1[i] + vec2[i];
@@ -10,9 +10,9 @@ valarray<double> operator+(const valarray<double>& vec1,const valarray<double>& 
   return result;
 }
 
-valarray<double> operator*(double factor, const valarray<double>& vec)
+dVector operator*(double factor, const dVector& vec)
 {
-  valarray<double> result(vec.size() );
+  dVector result(vec.size() );
     
     for(unsigned i = 0; i < vec.size(); ++i)
       result[i] = vec[i] * factor;
@@ -20,9 +20,9 @@ valarray<double> operator*(double factor, const valarray<double>& vec)
   return result;
 }
 
-valarray<double> operator*(const valarray<double>& vec, double factor)
+dVector operator*(const dVector& vec, double factor)
 {
-  valarray<double> result(vec.size() );
+  dVector result(vec.size() );
     
     for(unsigned i = 0; i < vec.size(); ++i)
       result[i] = vec[i] * factor;
@@ -30,9 +30,9 @@ valarray<double> operator*(const valarray<double>& vec, double factor)
   return result;
 }
 
-valarray<double> operator/(const valarray<double>& vec, double divisor)
+dVector operator/(const dVector& vec, double divisor)
 {
-  valarray<double> result(vec.size() );
+  dVector result(vec.size() );
     
     for(unsigned i = 0; i < vec.size(); ++i)
       result[i] = vec[i] / divisor;

@@ -1,8 +1,8 @@
 #include <valarray>
 
-using std::valarray;
+typedef std::valarray<double> dVector;
 
-valarray<double> operator+(const valarray<double>& vec1,const valarray<double>& vec2);
-valarray<double> operator*(double factor, const valarray<double>& vec);
-valarray<double> operator*(const valarray<double>& vec, double factor);
-valarray<double> operator/(const valarray<double>& vec, double divisor);
+dVector operator+(const dVector& vec1,const dVector& vec2);
+dVector operator*(double factor, const dVector& vec);
+dVector operator*(const dVector& vec, double factor);
+dVector operator/(const dVector& vec, double divisor);

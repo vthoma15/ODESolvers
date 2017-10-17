@@ -22,7 +22,7 @@ int main(int argc, const char * argv[])
   double dt = .01;
   string EulerFilename("/Users/vaughan/Dropbox/SEG/Jakir/RK4/Results/UndampedOscillator_Euler.csv");
   string RK4Filename("/Users/vaughan/Dropbox/SEG/Jakir/RK4/Results/UndampedOscillator_RK4.csv");
-  valarray<double> Y(2);
+  dVector Y(2);
   
   Y[0] = 1;
   Y[1] = 0;

@@ -12,13 +12,13 @@ void ODESolver::stepTo(double tend)
   return;
 }
 
-EulerSolver::EulerSolver(ODE& fEval, double t0, double dt, const valarray<double>& Y0)
+EulerSolver::EulerSolver(ODE& fEval, double t0, double dt, const dVector& Y0)
 : ODESolver(fEval, t0, dt, Y0)
 { }
 
 void EulerSolver::step()
 {
-  valarray<double> ydot(m_nVars);
+  dVector ydot(m_nVars);
   
   m_ODE.dydt(m_time, m_y, ydot);
   for(unsigned i = 0; i < m_nVars; ++i)
@@ -28,15 +28,15 @@ void EulerSolver::step()
   return;
 }
 
-RK4Solver::RK4Solver(ODE& fEval, double t0, double dt, const valarray<double>& Y0)
+RK4Solver::RK4Solver(ODE& fEval, double t0, double dt, const dVector& Y0)
 : ODESolver(fEval, t0, dt, Y0)
 { }
 
 void RK4Solver::step()
 {
   double tplusHalf = m_time + m_dt/2;
-  valarray<double> k1(m_nVars),k2(m_nVars),k3(m_nVars),k4(m_nVars);
-  valarray<double> y1(m_nVars),y2(m_nVars),y3(m_nVars),ydot(m_nVars);
+  dVector k1(m_nVars),k2(m_nVars),k3(m_nVars),k4(m_nVars);
+  dVector y1(m_nVars),y2(m_nVars),y3(m_nVars),ydot(m_nVars);
   
   m_ODE.dydt(m_time, m_y, k1);
   y1 = m_y + 0.5*k1*m_dt;

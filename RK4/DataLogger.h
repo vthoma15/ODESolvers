@@ -17,23 +17,23 @@
 
 using std::string;
 using std::vector;
-using std::valarray;
 using std::ofstream;
 
-// Forward Declaration of
+typedef std::valarray<double> dVector;
+
 
 class DataLogger
 {
 public:
   DataLogger(unsigned dimension);
   
-  void addData(double t, const valarray<double>& y);
+  void addData(double t, const dVector& y);
   void saveDataToFile(string filename) const;
   
 private:
   unsigned m_nVars;
   vector<double> m_time;
-  vector<valarray<double> > m_data;
+  vector<dVector> m_data;
   
 };
 

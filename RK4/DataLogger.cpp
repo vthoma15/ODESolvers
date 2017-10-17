@@ -11,10 +11,10 @@
 DataLogger::DataLogger(unsigned dimension) : m_nVars(dimension )
 {
   m_time = vector<double>();
-  m_data = vector<valarray<double> >();
+  m_data = vector<dVector>();
 }
 
-void DataLogger::addData(double t, const valarray<double>& y)
+void DataLogger::addData(double t, const dVector& y)
 {
   m_time.push_back(t);
   m_data.push_back(y);
@@ -29,7 +29,7 @@ void DataLogger::saveDataToFile(string filename) const
   
   for(unsigned i = 0; i < m_time.size(); ++i) {
     outfile << m_time[i];
-    valarray<double> vec = m_data[i];
+    dVector vec = m_data[i];
     for(unsigned j = 0; j < m_nVars; ++j) {
       outfile << c << vec[j];
     }

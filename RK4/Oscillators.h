@@ -15,7 +15,7 @@ class UndampedOscillator : public ODE
 {
 public:
   UndampedOscillator(double mass, double springConstant);
-  void dydt(double t, const valarray<double>& y, valarray<double>& dydt);
+  void dydt(double t, const dVector& y, dVector& dydt);
 private:
   double m_k;      // Restoring constant
   double m_mass;   // Mass
@@ -25,7 +25,7 @@ class DampedOscillator : public ODE
 {
 public:
   DampedOscillator(double mass, double springConstant, double dampingCoefficient);
-  void dydt(double t, const valarray<double>& y, valarray<double>& dydt);
+  void dydt(double t, const dVector& y, dVector& dydt);
 private:
   double m_k;                     // Restoring constant
   double m_mass;                  // Mass
